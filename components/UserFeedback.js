@@ -23,9 +23,9 @@ export default function UserFeedback() {
     setLoading(true);
 
     // Initialize Airtable base
-    const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-      "appPIG0MObCnbq9fM"
-    );
+    const base = new Airtable({
+      apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY,
+    }).base("appgdNuvoyvr4lJJe");
     const tableName = "Reports";
 
     try {

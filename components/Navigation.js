@@ -58,18 +58,6 @@ export default function Navigation() {
             >
               Home
             </a>
-            <a
-              href="#"
-              className="text-white hover:text-indigo-500 transition duration-300"
-            >
-              Happiest Person of the Week
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-indigo-500 transition duration-300"
-            >
-              About
-            </a>
           </div>
         </div>
       </nav>
@@ -102,18 +90,6 @@ export default function Navigation() {
                 className="text-white text-2xl font-bold hover:underline"
               >
                 Home
-              </a>
-              <a
-                href="#"
-                className="text-white text-2xl font-bold hover:underline"
-              >
-                Happiest Person of the Week
-              </a>
-              <a
-                href="#"
-                className="text-white text-2xl font-bold hover:underline"
-              >
-                About
               </a>
             </div>
           </div>
