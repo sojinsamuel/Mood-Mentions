@@ -1,38 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mood Mention
+
+Mood Mention is a web application that checks for the latest happy and sad moments on Showwcase and displays them in a user-friendly manner. It utilizes the Showwcase API to fetch data and stores it in Airtable. The Mood Mention website then fetches the data from Airtable to provide developers with insights into the community's emotions.
+
+## Technologies Used
+
+- Next.js
+- Airtable
+- OpenAI API
+- Showwcase API
 
 ## Getting Started
 
-First, run the development server:
+To set up the Mood Mention project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+1. Clone the repository:
+
+   ```shell
+   git clone https://github.com/sojinsamuel/mood-mention.git
+   ```
+2. Navigate to the project directory:
+```shell
+cd mood-mention
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Install the dependencies:
+```shell
+npm install
+```
+4. Set up environment variables:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- Create a .env.local file in the root of the project.
+- Define the following environment variables in the file:
+  `NEXT_PUBLIC_AIRTABLE_API_KEY=YOUR_AIRTABLE_API_KEY`
+5. Run the development server:
+```shell
+npm run dev
+```
+Open your browser and visit http://localhost:3000 to see the Mood Mention website.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Showwcase Emotion Digger Bot
+The data fetched to Airtable is retrieved using an automated Node.js bot called [Showwcase Emotion Digger](https://github.com/sojinsamuel/showwcase-emotion-digger). This bot periodically checks for the latest happy and sad moments on Showwcase. You can find the code for the bot and its functionality at the Showwcase Emotion Digger Bot repository.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The bot writes the fetched data from Showwcase API to Airtable, and the Mood Mention website fetches the data from Airtable to display it in a meaningful way.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Reference
+- [Airtable API Docs](https://airtable.com/developers/web/api/introduction)
