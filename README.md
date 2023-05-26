@@ -39,7 +39,7 @@ npm run dev
 Open your browser and visit http://localhost:3000 to see the Mood Mention website.
 
 ## Showwcase Emotion Digger Bot
-The data fetched to Airtable is retrieved using an automated Node.js bot called [Showwcase Emotion Digger](https://github.com/sojinsamuel/showwcase-emotion-digger). This bot periodically checks for the latest happy and sad moments on Showwcase. You can find the code for the bot and its functionality at the Showwcase Emotion Digger Bot repository.
+The data fetched to Airtable is retrieved using an automated Node.js bot called [Showwcase Emotion Digger](https://github.com/sojinsamuel/showwcase-emotion-digger) hosted on Amazon EC2 Instance. This bot periodically checks for the latest happy and sad moments on Showwcase. You can find the code for the bot and its functionality at the Showwcase Emotion Digger Bot repository.
 
 The bot writes the fetched data from Showwcase API to Airtable, and the Mood Mention website fetches the data from Airtable to display it in a meaningful way.
 
