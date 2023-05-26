@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Airtable from "airtable";
 
 export default function UserFeedback() {
   const [formData, setFormData] = useState({
@@ -21,26 +20,20 @@ export default function UserFeedback() {
     e.preventDefault();
 
     setLoading(true);
+    const { name, email, message } = formData;
 
-    // Initialize Airtable base
-    const base = new Airtable({
-      apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY,
-    }).base("appgdNuvoyvr4lJJe");
-    const tableName = "Reports";
+    const response = await fetch("/api/report", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
 
-    try {
-      await base(tableName).create({
-        Name: formData.name,
-        Email: formData.email,
-        Message: formData.message,
-      });
-
-      setSubmitted(true);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error creating record in Airtable:", error);
-      setLoading(false);
-    }
+    const serverResponse = JSON.parse(await response.text());
+    console.log(serverResponse);
+    setLoading(false);
+    setSubmitted(true);
   };
 
   return (
